@@ -4,7 +4,7 @@ public enum StatusPersistencia {
 
 	ERRO("Erro"),
 	SUCESSO("Sucesso"),
-	OBJETO_REFERENCIADO("Esse objeto não pode ser apagado por pussuir referências ao mesmo");
+	OBJETO_REFERENCIADO("Esse objeto nÃ£o pode ser apagado por pussuir referÃªncias ao mesmo");
 	
 	private String name;
 	
