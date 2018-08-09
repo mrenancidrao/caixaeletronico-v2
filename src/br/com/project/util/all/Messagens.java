@@ -25,7 +25,7 @@ public abstract class Messagens extends FacesContext implements Serializable {
 	
 	public static void msg(String msg) {
 		if (facesContextValido()) {
-			getFacesContent().addMessage("msg", new FacesMessage(msg));
+			getFacesContext().addMessage("msg", new FacesMessage(msg));
 		}
 	}
 	
@@ -39,35 +39,35 @@ public abstract class Messagens extends FacesContext implements Serializable {
 		}
 	}
 	
-	public static FacesContext getFacesContent() {
+	public static FacesContext getFacesContext() {
 		return FacesContext.getCurrentInstance();
 	}
 	
 	private static boolean facesContextValido() {
-		return getFacesContent() != null;
+		return getFacesContext() != null; 
 	}
 	
 	public static void msgSeverityWarn(String msg) {
 		if (facesContextValido()) {
-			getFacesContent().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_WARN, msg, msg));
+			getFacesContext().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_WARN, msg, msg));
 		}
 	}
 	
 	public static void msgSeverityFatal(String msg) {
 		if (facesContextValido()) {
-			getFacesContent().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_FATAL, msg, msg));
+			getFacesContext().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_FATAL, msg, msg));
 		}
 	}
 	
 	public static void msgSeverityError(String msg) {
 		if (facesContextValido()) {
-			getFacesContent().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
+			getFacesContext().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_ERROR, msg, msg));
 		}
 	}
 	
 	public static void msgSeverityInfo(String msg) {
 		if (facesContextValido()) {
-			getFacesContent().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg));
+			getFacesContext().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg));
 		}
 	}
 	

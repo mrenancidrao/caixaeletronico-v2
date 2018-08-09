@@ -10,6 +10,7 @@ import javax.faces.event.PreDestroyViewMapEvent;
 import javax.faces.event.SystemEvent;
 import javax.faces.event.ViewMapListener;
 
+@SuppressWarnings("unchecked")
 public class ViewScopeCallbackackRegistrer implements ViewMapListener{
 
 	@Override
@@ -23,7 +24,9 @@ public class ViewScopeCallbackackRegistrer implements ViewMapListener{
 			PostConstructViewMapEvent viewMapEvent = (PostConstructViewMapEvent) event;
 			UIViewRoot uiViewRoot = (UIViewRoot) viewMapEvent.getComponent();
 			uiViewRoot.getViewMap().put(ViewScope.VIEW_SCOPE_CALLBACKS, new HashMap<String, Runnable>());
+		
 		} else if (event instanceof PreDestroyViewMapEvent) {
+		
 			PreDestroyViewMapEvent viewMapEvent = (PreDestroyViewMapEvent) event;
 			UIViewRoot viewRoot = (UIViewRoot) viewMapEvent.getComponent();
 			Map<String, Runnable> callbacks = (Map<String, Runnable>) viewRoot.getViewMap().get(ViewScope.VIEW_SCOPE_CALLBACKS);

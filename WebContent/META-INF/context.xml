@@ -19,6 +19,7 @@
 		timeBetweenEvictionRunsMillis="5000"
 		minEvictableIdleTimeMillis="60000"
 		antiJARLocking="false"
+		antiResourceLocking="false"
 		username="caixaki"
 		password="admin"
 		url="jdbc:postgresql://localhost:5432/ebook_jee?autoReconect=true"

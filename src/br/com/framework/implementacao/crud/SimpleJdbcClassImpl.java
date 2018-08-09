@@ -13,15 +13,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(propagation=Propagation.REQUIRED, rollbackFor = Exception.class)
 public class SimpleJdbcClassImpl extends SimpleJdbcCall implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+
 	public SimpleJdbcClassImpl(DataSource dataSource) {
 		super(dataSource);
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	
 
 	
 	
