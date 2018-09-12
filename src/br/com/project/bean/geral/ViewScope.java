@@ -10,6 +10,7 @@ import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.config.Scope;
 import org.springframework.web.context.request.FacesRequestAttributes;
 
+@SuppressWarnings("unchecked")
 public class ViewScope implements Scope, Serializable {
 
 	
@@ -64,7 +65,7 @@ public class ViewScope implements Scope, Serializable {
 	}
 	
 	//getViewRoot
-	//Retorna o componente raiz que está associado a esta solicitação(request)
+	//Retorna o componente raiz que estï¿½ associado a esta solicitaï¿½ï¿½o(request)
 	//getViewMap Retorna um Map que atua como interface para armazenamento de dados
 	private Map<String, Object> getViewMap(){
 		return FacesContext.getCurrentInstance() != null ? 

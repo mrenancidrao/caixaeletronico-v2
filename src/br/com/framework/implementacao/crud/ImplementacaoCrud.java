@@ -35,6 +35,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T>{
 	@Autowired
 	private SimpleJdbcInsertImpl simpleJdbcInsert;
 	
+	@Autowired
 	private SimpleJdbcTemplateImpl simpleJdbcTemplateImpl;
 
 	
@@ -227,6 +228,10 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T>{
 		sessionFactory.getCurrentSession().getTransaction().rollback();
 	}
 	
+	
+	/**
+	 * Roda instantaneamente o SQL no banco de dados
+	 */
 	private void executeFlushSession() {
 		sessionFactory.getCurrentSession().flush();
 	}
