@@ -34,7 +34,7 @@ public abstract class BeanReportView extends BeanViewAbstract {
 	
 	public BeanReportView() {
 		parametrosRelatorio = new HashMap<Object, Object>();
-		listDataBeanCollectionReport = new ArrayList<>();
+		listDataBeanCollectionReport = new ArrayList<Object>();
 	}
 
 	public ReportUtil getReportUtil() {

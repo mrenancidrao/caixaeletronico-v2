@@ -20,9 +20,9 @@
 		minEvictableIdleTimeMillis="60000"
 		antiJARLocking="false"
 		antiResourceLocking="false"
-		username="caixaki"
-		password="admin"
-		url="jdbc:postgresql://localhost:5432/ebook_jee?autoReconect=true"
+		username="postgres"
+		password="postgres"
+		url="jdbc:postgresql://localhost:5432/amamentai-api?autoReconnect=true"
 	/>
 
 </Context>

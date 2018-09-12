@@ -203,7 +203,7 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T>{
 	@Override
 	public List<T> findListByQueryDinamica(String query, int iniciNoRegistro, int maximoResultado) throws Exception {
 		validaSessionFactory();
-		List<T> lista = new ArrayList<>();
+		List<T> lista = new ArrayList<T>();
 		lista = sessionFactory.getCurrentSession().createQuery(query).setFirstResult(iniciNoRegistro).setMaxResults(maximoResultado).list();
 		return null;
 	}
