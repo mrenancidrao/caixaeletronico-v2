@@ -86,7 +86,7 @@ id="WebApp_ID" metadata-complete="true" version="3.1">
   
   <context-param>
   	<param-name>primefaces.THEME</param-name>
-  	<param-value>sunny</param-value>
+  	<param-value>smoothness</param-value>
   </context-param>
   
   <filter>
@@ -175,5 +175,10 @@ id="WebApp_ID" metadata-complete="true" version="3.1">
   	<servlet-name>Faces Servlet</servlet-name>
   	<url-pattern>*.jsf</url-pattern>
   </servlet-mapping>
+  
+  <mime-mapping>
+   <extension>jsp</extension>
+   <mime-type>application/jsp</mime-type>
+</mime-mapping> 
   
 </web-app>

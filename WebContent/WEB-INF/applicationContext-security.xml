@@ -24,7 +24,7 @@
 	   access="isAuthenticated() and hasAnyRole('USER')"/>
 	   
 	   <intercept-url pattern="/restrito/**" 
-		access="isAuthenticated() and hasAnyRole('USER')"/>
+		access="isAuthenticated() and hasAnyRole('USER')"/> 
 		
 		<intercept-url pattern="/error/**" 
 		access="isAnonymous() or isAuthenticated() or !isAuthenticated()"/>
@@ -68,8 +68,8 @@
 								        where ativo = true
 								        and upper(login) = upper(?)"
 		 		
-		 		authorities-by-username-query="select u.ent_login as username,
-										p.descricao as authority
+		 		authorities-by-username-query="select u.login as username,
+										p.nome as authority
 										from usuario u
 										join tipo_usuario p
 										on u.tipo_usuario = p.id
