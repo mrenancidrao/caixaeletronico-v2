@@ -35,7 +35,7 @@ public class HibernateUtil implements Serializable {
 	 * Resposavel por ler o arquivo de configuração do hibernate.cfg.xml
 	 * @return SessionFactory
 	 */
-	@SuppressWarnings("deprecation")
+
 	private static SessionFactory builderSessionFactory() {
 		
 		try {

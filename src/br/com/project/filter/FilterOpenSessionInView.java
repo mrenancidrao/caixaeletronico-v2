@@ -8,6 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -18,7 +20,9 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import br.com.framework.hibernate.session.HibernateUtil;
+import br.com.framework.utils.UtilFramework;
 import br.com.project.listener.ContextLoaderListenerCaixaUtils;
+import br.com.project.model.classes.Usuario;
 
 @WebFilter(filterName="conexaoFilter")
 public class FilterOpenSessionInView extends DelegatingFilterProxy implements Serializable {
@@ -50,13 +54,13 @@ public class FilterOpenSessionInView extends DelegatingFilterProxy implements Se
 			request.setCharacterEncoding("UTF-8");// DEFINE CODIFICAÇÃO
 			
 			// captura usuário que faz a operação
-			/*HttpServletRequest request2 = (HttpServletRequest) request;
+			HttpServletRequest request2 = (HttpServletRequest) request;
 			HttpSession sessao = request2.getSession();
-			Entidade userLogadoSessao = (Entidade) sessao.getAttribute("userLogadoSessao");
+			Usuario userLogadoSessao = (Usuario) sessao.getAttribute("userLogadoSessao");
 			
 			if (userLogadoSessao != null){
-				UtilFramework.getThreadLocal().set(userLogadoSessao.getEnt_codigo());
-			}*/
+				UtilFramework.getThreadLocal().set(userLogadoSessao.getId());
+			}
 			
 			sf.getCurrentSession().beginTransaction();
 			// antes de executar ação (Request)

@@ -28,7 +28,7 @@ public class SessionControllerImpl implements SessionController {
 				e.printStackTrace();
 			}
 		}else {
-			System.out.println("n√£o tem usu√°rio");
+			System.out.println("n„o tem usu·rio");
 		}
 
 		hashMap.remove(keyLoginUser);

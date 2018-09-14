@@ -1,12 +1,9 @@
 package br.com.project.model.classes;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.envers.Audited;
 
@@ -25,16 +22,6 @@ public class Usuario implements Serializable {
 	
 	private boolean ativo = true;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date ultimoAcesso;
-	
-	public void setUltimoAcesso(Date ultimoAcesso) {
-		this.ultimoAcesso = ultimoAcesso;
-	}
-	
-	public Date getUltimoAcesso() {
-		return ultimoAcesso;
-	}
 
 	public Long getId() {
 		return id;
